@@ -1,15 +1,4 @@
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Thanks again! Now go create something AMAZING! :D
 
-***
-***
-***
-*** To avoid retyping too much info. Do a search and replace for the following:
-*** GabrieleMasciulli, wordle-solver, twitter_handle, gmasciu@gmail.com, Wordle Solver, Learning information theory to solve the game 'Wordle' by maximising differential entropy.
--->
 
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
@@ -20,12 +9,14 @@
 
 <!-- PROJECT LOGO -->
 <br />
+
 <p align="center">
   <a href="https://github.com/github_username/repo_name">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">project_title</h3>
+
+  <h3 align="center">Wordle-solver</h3>
 
   <p align="center">
     Learning information theory to solve the game 'Wordle' by maximising differential entropy.
@@ -42,6 +33,7 @@
 </p>
 
 <!-- TABLE OF CONTENTS -->
+
 <details open="open">
   <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
   <ol>
@@ -58,7 +50,12 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li>
+      <a href="#usage">Theory behind the code</a>
+      <ul>
+        <li><a>What is information?</a></li>
+      </ul>
+    </li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -73,9 +70,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`GabrieleMasciulli`, `wordle-solver`, `twitter_handle`, `gmasciu@gmail.com`, `Wordle Solver`, `Learning information theory to solve the game 'Wordle' by maximising differential entropy.`
+
 
 ### Built With
 
