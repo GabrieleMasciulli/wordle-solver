@@ -13,10 +13,6 @@ def get_word_list(all):  # returns a list of strings
     return result
 
 
-def word_has_letter_n_times(word, letter, occurences):
-    return word.count(letter) == occurences
-
-
 # returns true if the word passed as a parameter matches the given patter, false otherwise
 
 # Reminder of how Wordle works when it comes to match the pattern of an allowed  word to the word to guess:
@@ -35,13 +31,27 @@ def matches_pattern(word, possible_word, pattern):
     match = False
 
     for i, color in enumerate(pattern):
+        letter_occurences = word.count(word[i])
+
         if color == 'black':
-            match = possible_word.find(word[i]) == -1
+            # if letter occurs just once with a black cell then the possible
+            # word must not have any occurence for that letter in order to match.
+            if letter_occurences == 1:
+                match = possible_word.find(word[i]) == -1
+            else:
+                # if the letter occurs more than once throughout the word then a
+                # match is found if both the letter at index i of the possible word
+                # doesn't correspond to to the letter at index i of the word and
+                # the number of occurences of that letter corresponds for both words.
+
+                match = possible_word[i] != word[i] and possible_word.count(
+                    word[i]) == letter_occurences
         elif color == 'green':
             # letter at index i MUST correspond
             match = possible_word[i] == word[i]
         elif color == 'yellow':
-            ''
+            match = possible_word[i] != word[i] and possible_word.find(
+                word[i]) != -1
 
         if not match:
             break
@@ -57,7 +67,6 @@ def count_words_left_from_pattern(word, pattern, possible_words):
     for possible_word in possible_words:
         if matches_pattern(word, possible_word, pattern):
             count += 1
-            # print(f'Word: {word}, Possible word: {possible_word}')
 
     return count
 
@@ -78,7 +87,7 @@ def compute_patterns():  # returns a list of tuples (each tuple represents a spe
 
 
 def main():
-    word = "shake"
+    word = "weary"
     patterns = compute_patterns()
     possible_words = get_word_list(all=False)
 
