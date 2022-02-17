@@ -16,7 +16,19 @@ def get_word_list(all):  # returns a list of strings
 def word_has_letter_n_times(word, letter, occurences):
     return word.count(letter) == occurences
 
+
 # returns true if the word passed as a parameter matches the given patter, false otherwise
+
+# Reminder of how Wordle works when it comes to match the pattern of an allowed  word to the word to guess:
+#   If the allowed word has multiple occurences of the same letter and one is  green
+#   and the other is black it means that the word to guess has that letter at that
+#   index but it does not have any other occurence of that letter.
+#   The same applies when it comes to yellow letters: if one occurence is yellow and
+#   the other is black it means that there's no second occurence of that letter in the
+#   word we're guessing.
+#
+# This is the reason that forces us to count the number of occurences for each letter to prevent
+# mistakes and bugs.
 
 
 def matches_pattern(word, possible_word, pattern):
@@ -66,7 +78,7 @@ def compute_patterns():  # returns a list of tuples (each tuple represents a spe
 
 
 def main():
-    word = "never"
+    word = "shake"
     patterns = compute_patterns()
     possible_words = get_word_list(all=False)
 
